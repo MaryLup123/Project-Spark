@@ -35,3 +35,23 @@ h1 {
     font-size: 18px;
     margin-top: 10px;
 }
+
+
+.producto p {
+    font-size: 14px;
+    color: #333;
+}
+
+.producto button {
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.producto button:hover {
+    background-color: #218838;
+}
