@@ -1,0 +1,38 @@
+<!-- catalogo/templates/catalogo/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+<h1>Catálogo de Productos</h1>
+
+<form method="GET" action="">
+    <select name="categoria">
+        <option value="">Seleccionar Categoría</option>
+        {% for categoria in categorias %}
+            <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Filtrar</button>
+</form>
+
+<div class="productos">
+    {% for producto in productos %}
+        <div class="producto">
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.descripcion }}</p>
+            <p>${{ producto.precio }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>
